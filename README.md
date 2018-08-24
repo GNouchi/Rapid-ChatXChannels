@@ -2,7 +2,7 @@
 A rapid fire tutorial and introduction of Django Channels. To get more in-depth check out the full course https://kirr.co/badl8e
 
 
-YouTube Video: __coming soon__
+YouTube Video: https://www.youtube.com/watch?v=RVH05S1qab8&t=0s
 
 
 
