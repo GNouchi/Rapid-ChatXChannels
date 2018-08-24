@@ -1,6 +1,5 @@
 <Additional Info for Windows users>
 Windows users will need quite a bit of extra work:
-**********************************************************************************************
     
 ### Easy Redis install:
 ```
@@ -31,7 +30,8 @@ pip install pypiwin32
 ```
 
 **********************************************************************************************
-If this is your first time working with channels it is recommended to build the video's example exactly as is first, THEN tinker with the code. The app can be quite fragile with this set up so dont stress if things don't match up to the video, just go back a couple minutes and code-compare against the video.
+#### If this is your first time working with channels it is recommended to build the video's example exactly as is first, THEN tinker with the code. The app can be quite fragile with this set up so dont stress if things don't match up to the video, just go back a couple minutes and code-compare against the video.
+**********************************************************************************************
 
 
 
