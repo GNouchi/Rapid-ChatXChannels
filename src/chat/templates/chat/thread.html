@@ -11,16 +11,57 @@
 </ul>
 
 <form id='form' method='POST'> {% csrf_token %}
-{{form.as_p }}
+<input type="hidden" id = "myUsername" value="{{user.username}}">
+    {{form.as_p }}
 <input type='submit' class='btn btn-primary'/>
 </form>
 
 {% endblock %}
 
 {% block script %}
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reconnecting-websocket/1.0.0/reconnecting-websocket.js"></script>
 <script>
 // websocket scripts
+// console.log(window.location)
+var loc = window.location
+var formData = $("#form")
+var msgInput = $("#id_message")
+var chatHolder = $("#chat-items")
+var me = $("#myUsername").val()
+
+var wsStart = 'ws://'
+if (loc.protocol == 'https:'){
+    wsStart = 'wss://'
+}
+var endpoint = wsStart + loc.host + loc.pathname
+var socket = new ReconnectingWebSocket(endpoint)
+
+socket.onmessage = function(e){
+    console.log("message",e)
+    var chatDataMsg = JSON.parse(e.data)
+    chatHolder.append("<li>" + chatDataMsg.message + " by " + me + "</li>")
+}
+//  here is where data is sending back
+socket.onopen= function(e){
+    console.log("reconnected in jquery",e)
+    formData.submit(function(event){
+        event.preventDefault()
+        var msgText = msgInput.val()
+        var finalData = {
+            'message': msgText,
+        }
+        console.log("open recieved final data as obj containing" , finalData['message'])
+        socket.send(JSON.stringify(finalData))        
+        formData[0].reset()
+    })
+}
+socket.onerror= function(e){
+    console.log("error in jquery",e)
+}
+socket.onclose= function(e){
+    console.log("close  in jquery",e)
+}
+
 
 </script>
 {% endblock %}

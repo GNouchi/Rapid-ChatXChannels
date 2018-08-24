@@ -1,6 +1,4 @@
 from django.contrib import admin
-
-
 from .models import Thread, ChatMessage
 
 class ChatMessage(admin.TabularInline):
