@@ -34,6 +34,7 @@ pip install pypiwin32
 **********************************************************************************************
 
 
+<Original Readme>:
 
 # Rapid-ChatXChannels
 A rapid fire tutorial and introduction of Django Channels. To get more in-depth check out the full course https://kirr.co/badl8e
