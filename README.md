@@ -1,31 +1,36 @@
 <Additional Info for Windows users>
 Windows users will need quite a bit of extra work:
-**********************************************************************************************************************************************************************************************************************************************************************************
-
-# Easy Redis install:
+**********************************************************************************************
+    
+### Easy Redis install:
+```
 https://redis.io/download 
+```
 roll the dice and run the .exe for server and cli 
-
 (should be safe since its semi-trusted, but you never know)
 (I used 3.2 but it doesn't really matter for this application)
 
-# Many windows users will hit a wall with Channels.By downloading the appropriate binary and running pip install, you should be fine:
+### Many windows users will hit a wall with Channels.By downloading the appropriate binary and running pip install, you should be fine:
+```
 https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted
 pip install c:/users/joe/downloads/Twisted‑18.7.0‑cp37‑cp37m‑win_amd64.whl  
-
+```
 e.g. if my computer username is joe and I save the file to downloads:
 **be sure to check you have the correct version in the command**
 
-# You may also be prompted to download Visual Studio C++ the error log will provide a link: #
+### You may also be prompted to download Visual Studio C++ the error log will provide a link:
+```
 https://visualstudio.microsoft.com/downloads/
-
+```
 If this happens you ONLY need the build tools for C++!!
 File sizes can get pretty big so start with the base recommendation (3 packages) and slowly add more (C++ related packages) if its still not working. 
 
-# After installing redis windows users will get an error for win32api: #
+### After installing redis windows users will get an error for win32api:
+```
 pip install pypiwin32
+```
 
-**********************************************************************************************************************************************************************************************************************************************************************************
+**********************************************************************************************
 If this is your first time working with channels it is recommended to build the video's example exactly as is first, THEN tinker with the code. The app can be quite fragile with this set up so dont stress if things don't match up to the video, just go back a couple minutes and code-compare against the video.
 
 
